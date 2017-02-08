@@ -1,0 +1,13 @@
+<h1>List</h1>
+<% if @lists.any? %>
+ <%   @lists.each do |list| %>
+ <div>
+   <%= link_to list.info, list_path(list) %>
+ </div>
+ <% end %>
+
+ <% else %>
+ <h3>No list items found, Please create one!</h3>
+<% end %>
+
+<%= link_to 'New list item', new_list_path %>
